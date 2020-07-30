@@ -17,14 +17,17 @@
     position: fixed;
     background-color: #444445;
     width: 100%;
+    height: 155px;
     z-index: 3;
+    padding-top: 48px;
   }
   
   header #logo{
     height: 94px;
-    margin-left: 50px;
-    margin-top: 48px;
+    display: block;
+    margin: auto;
   }
+  
   
   nav{
     position: fixed;
@@ -61,14 +64,43 @@
     margin-top: 70px;
     text-transform: uppercase;
   }
+  
   main .second-line{
     font-family: "Friz Quadrata Regular";
     font-size: 48px;
     text-transform: uppercase;
+    margin-bottom: 53px;
   }
-
+  main .welcome{
+    color: #444445;
+    font-size: 0.875rem;
+    text-align: center;
+    width: 70%;
+    display: block;
+    margin: auto;
+    margin-bottom: 3.875rem;
+  }
+  
+  :root h3{
+    position: absolute;
+    font-family: "Friz Quadrata Regular";
+    font-size: 1.125rem; /*18px rem es el tamaño que necesitas / tamaño global de la fuente*/
+    color: aliceblue;
+    text-transform: uppercase;
+    margin-top: 37px;
+    margin-left: 42px;
+  }
+  
+  
+  #root{
+    background-color: rgb(38, 38, 38);
+    background-image: element(<img class = 'imgchampion' />);
+    heig
+  }
+  
   :root .imgchampion{
     width: 100%;
+    background-size: cover;
   }
   
   section{
@@ -77,20 +109,34 @@
   
   section h2{
     text-transform: uppercase;
+    margin-top: 78px;
+    margin-bottom: 78px;
+    color: #444445;
   }
-  
+
   section #league{
     font-family: "Friz Quadrata Regular";
     display: block;
     font-size: 48px;
     text-transform: uppercase;
+    margin-bottom: 10px;
   }
-  
   
   section .download{
     height: 509px;
   }
   
+  section .invitation{
+    width: 80%;
+    color: #444445;
+    font-size: 0.875rem;
+    display: block;
+    margin: auto;
+    margin-bottom: 5rem;
+  }
+  
   section .store-links img{
     height: 41px;
+    margin-bottom: 150px;
   }
+  
