@@ -1,6 +1,6 @@
 import data from "./data/lol/lol.js";
 const datos = Object.values(data.data);
-const championsDiv = document.getElementById("root");
+let championsDiv = document.getElementById("root");
 
 
 for (const champion of datos) {
