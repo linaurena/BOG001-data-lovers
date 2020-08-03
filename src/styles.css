@@ -1,0 +1,415 @@
+/*------------------------*/
+/*CARACTERÍSTICAS GLOBALES*/
+/*------------------------*/
+
+*{
+  margin:0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Arima Madurai', cursive;
+  box-sizing: border-box;
+
+}
+
+/*------------*/
+/*FUENTE LOCAL*/
+/*------------*/
+
+@font-face {
+  font-family: Friz Quadrata;
+  src: url(fonts/Friz\ Quadrata\ Std\ Medium.otf);
+}
+
+/*------------------------*/
+/*CONTENIDO - MOBILE FIRST*/
+/*------------------------*/
+
+header{
+  position: fixed;
+  background-color: #444445;
+  width: 100%;
+  height: 155px;
+  z-index: 3;
+  padding-top: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+header #logo{
+  height: 94px;
+}
+
+#box-header{
+  display: none;
+}
+
+header #btn-game-desktop{
+  display: none;
+}
+
+/*ÍCONO DEL MENÚ HAMBURGUESA*/
+
+header #hamb-menu{
+  margin-top: 3.4375rem;
+  height: 2.125rem;
+}
+
+/*CONTENIDO DEL MENÚ HAMBURGUESA*/
+
+.hamb-menu-overlay{
+  background: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 2;
+  visibility: hidden;                             /*      */
+}
+
+.hamb-menu-overlay .popup-hamb-menu{
+  position: absolute;
+  background: #C6AD64;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+  height: 100%;
+  width: 50%;
+  border-radius: 4px;
+  padding: 0.25rem;
+  top: 155px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+#btn-close-hamb-menu{
+  position: absolute;
+}
+
+.hamb-menu-overlay .popup-hamb-menu .external-links{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamb-menu-overlay .popup-hamb-menu .external-links a{
+  margin: 1rem;
+  text-decoration: none;
+  color: rgba(0,0,0,0.50);
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  margin: 1rem;
+  border-bottom: 0.5px solid rgba(0,0,0,0.25);
+  padding: 8px;
+  font-family: "Friz Quadrata Regular";
+}
+
+.hamb-menu-overlay .popup-hamb-menu .external-links .btn-game{
+  background-color: #e6b524;
+  color: rgb(0,0,0);
+  border: none;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.mobile{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 53px;
+  background-color: #444445;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.mobile #cards{
+  position: absolute;
+  bottom: 0px;
+}
+
+.mobile #sort{
+  margin-right: 2rem;
+  margin-top: 5px;
+}
+
+.mobile #filter{
+  margin-left: 2rem;
+  margin-top: 5px;
+}
+
+main{
+  position: relative;
+  top: 160px;
+}
+
+main h1{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+main .first-line{
+  margin-top: 70px;
+  text-transform: uppercase;
+}
+
+main .second-line{
+  font-family: "Friz Quadrata Regular";
+  font-size: 48px;
+  text-transform: uppercase;
+  margin-bottom: 53px;
+}
+main .welcome{
+  color: #444445;
+  font-size: 0.875rem;
+  text-align: center;
+  width: 70%;
+  display: block;
+  margin: auto;
+  margin-bottom: 80px;
+}
+
+.navigation-bar{
+  height: 50px;
+  width: 312px;
+  border: 0.5px solid #C4C4C4;
+  border-radius: 8px;
+  display: flex;
+  margin: auto;
+  margin-bottom: 45px;
+}
+
+.navigation-bar .nav-search{
+  height: 50px;
+  width: 312px;
+  border: 0.5px solid #C4C4C4;
+  border-radius: 8px;
+  display: flex;
+  margin: auto;
+  margin-bottom: 45px;
+}
+
+.navigation-bar .nav-search #search-icon{
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 5px;
+}
+
+.navigation-bar .nav-search h4{
+  display: none;
+}
+
+.navigation-bar .nav-search #search{
+  border-style: none;
+  padding-left: 38px;
+  height: 37px;
+  width: 200px;
+  border-left: 0.5px solid #C4C4C4;
+  margin-top: 5px;
+}
+
+.navigation-bar .nav-role{
+  display: none;
+}
+
+.navigation-bar .nav-sort{
+  display: none;
+}
+
+.navigation-bar .nav-difficult{
+  display: none;
+}
+
+#root div{
+  height: 108px;
+  width: 100%;
+}
+
+:root h3{
+  position: absolute;
+  font-family: "Friz Quadrata Regular";
+  font-size: 1.125rem; /*18px rem es el tamaño que necesitas / tamaño global de la fuente*/
+  color: aliceblue;
+  text-transform: uppercase;
+  margin-top: 42px;
+  margin-left: 42px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+
+}
+:root .imgchampion{
+  width: 100%;
+}
+
+section{
+  text-align: center;
+}
+
+section h2{
+  text-transform: uppercase;
+  margin-top: 78px;
+  margin-bottom: 78px;
+  color: #444445;
+}
+
+section #league{
+  font-family: "Friz Quadrata Regular";
+  display: block;
+  font-size: 48px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+
+section .download{
+  height: 509px;
+}
+
+section .invitation{
+  width: 80%;
+  color: #444445;
+  font-size: 0.875rem;
+  display: block;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+section .store-links img{
+  height: 41px;
+  margin-bottom: 150px;
+}
+
+/*--------------*/
+/*OVERLAY FILTER*/
+/*--------------*/
+
+.popup-section .overlay-filter{
+  background: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;                             /*      */
+}
+
+.popup-section .overlay-filter.active{
+  visibility: visible;
+}
+
+.popup-section .popup-filter{
+  background: #444445;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+  height: 218px;
+  width: 292px;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.popup-section .popup-filter .btn-close-popup{
+  font-size: 1rem;
+  line-height: 1rem;
+  display: block;
+  text-align: right;
+  color: #bbbbbb;
+  transition: .3s ease all;
+}
+
+.popup-section .popup-filter h5{
+  color: #C6AD64;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: "Friz Quadrata Regular";
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 8px;
+}
+
+.popup-section .popup-filter .box-btn-select{
+  display: flex;
+  flex-direction: row;
+  width: 247px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.popup-section .popup-filter .btn-select{
+  background: #656156;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  height: 115px;
+  width: 115px;
+  padding: 1rem;
+}
+
+.popup-section .popup-filter .btn-select p{
+  color: #C6AD64;
+}
+.popup-section .popup-filter .btn-select img{
+  margin-top: 5px;
+}
+
+.popup-section .popup-filter .btn-select .diff-img{
+  margin-top: 20px;
+}
+
+/*------------------*/
+/*---OVERLAY ROLE---*/
+/*------------------*/
+
+.popup-section .overlay-role{
+  background: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;                             /*      */
+}
+
+.popup-section .overlay-role.active{
+  visibility: visible;
+}
+
+.popup-section .popup-role{
+  background: #444445;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+  height: 218px;
+  width: 292px;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.popup-section .popup-role .btn-close-popup{
+  font-size: 1rem;
+  line-height: 1rem;
+  display: block;
+  text-align: right;
+  color: #bbbbbb;
+  transition: .3s ease all;
+}
+
+.popup-section .popup-role h5{
+  color: #C6AD64;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: "Friz Quadrata Regular";
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 8px;
+}
