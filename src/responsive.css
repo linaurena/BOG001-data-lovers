@@ -1,0 +1,113 @@
+@media screen and (min-width:1024px){
+
+    .mobile{
+      display: none;
+    }
+  
+    .popup-section{
+      display: none;
+    }
+  
+    #hamb-menu{
+      display: none;
+    }
+  
+    #box-header{
+      display: unset;
+      width: 40%;
+      height: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    #box-header a{
+      text-decoration: none;
+      color: #E5E5E5;
+      text-transform: uppercase;
+      font-family: "Friz Quadrata Regular";
+    }
+  
+    header #btn-game-desktop{
+      display: unset;
+      text-decoration: none;
+      color: #444445;
+      text-transform: uppercase;
+      font-family: "Friz Quadrata Regular";
+      background-color: #C6AD64;
+      border-radius: 4px;
+      padding: 14px;
+      height: 46px;
+    }
+  
+    .navigation-bar .nav{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .navigation-bar .nav #search-icon{
+      border: none;
+      padding-right: 30px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      padding-top: 5px;
+    }
+  
+    .navigation-bar .nav #search{
+      border-style: none;
+      margin-left: 10px;
+      padding-left: 38px;
+    }
+  
+    .navigation-bar .nav h4{
+      display: unset;
+      padding: 11px;
+      text-transform: uppercase;
+      color: #444445;
+  
+    }
+  
+    .navigation-bar .nav{
+      height: 50px;
+      width: 80%;
+      border: 0.5px solid #C4C4C4;
+      border-radius: 8px;
+      display: flex;
+      margin: auto;
+      margin-bottom: 45px;
+    }
+  
+    .navigation-bar .nav-role{
+      display: unset;
+    }
+  
+    .navigation-bar .nav-sort{
+      display: unset;
+    }
+  
+    .navigation-bar .nav-difficult{
+      display: unset;
+    }
+  
+  
+    #root {
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1rem;
+      justify-content: space-around;
+      margin: auto;
+    }
+  
+    #root div{
+      height: 108px;
+      width: 375px;
+    }
+  
+    :root .imgchampion{
+      width: 375px;
+    }
+  
+  }
+  

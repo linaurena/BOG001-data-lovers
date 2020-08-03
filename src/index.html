@@ -1,37 +1,195 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport"content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200;300;400&display=swap" rel="stylesheet">
-    <title>Data LOL</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <img src="img/logo.png" alt="League Of Legends Logo" id="logo">
-    </header>
-    <nav>
-      <img src="img/nav.svg" alt="Nav" id="nav">
-      <img src="img/list.svg" alt="List" id="list">
-    </nav>
-    <main>
-      <h1><span class="first-line">Choose yor</span><span class="second-line">champion</span></h1>
-      <section class ="champions">
-        <p>Welcome to the best game ever</p>
-        <div id="root"></div>
-      </section>
-      <section class="download">
-        <h2>Take<span id="league">league</span> with you</h2>
-        <p>Download the League app to stay connected to friends and the latest game and esports news.</p>
-        <div class="store-links">
-          <img src="img/google.png" alt="Google Play">
-          <img src="img/app.png" alt="App Store">
+
+
+<head>
+  <meta charset="utf-8">
+  <!--Se establece la medida única del sitio, no es posible hacer zoom-->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <!--Posicionamiento web-->
+  <meta name="keywords" content="lol, game, champions of league of legends, API">
+  <!--Fuente global del sitio-->
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200;300;400&display=swap"
+    rel="stylesheet">
+  <!--ícono del sitio en la pestaña-->
+  <link rel="icon" type="image/png" href="img/lol-icon.png" />
+  <!--Fuente para íconos del sitio-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <!--Enlaces a CSS-->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="responsive.css" />
+  <!--Nombre de la pestaña-->
+  <title>Data Lovers</title>
+</head>
+
+<body>
+  <!--Encabezado-->
+  <header>
+    <img src="img/logo.png" alt="League Of Legends Logo" id="logo">
+    <img src="img/hamburger.svg" alt="Menu" id="hamb-menu">
+    <div id="box-header">
+      <a href="https://na.leagueoflegends.com/en-us/how-to-play/">How to play</a>
+      <a href="https://na.leagueoflegends.com/en-us/news/">News</a>
+      <a href="https://lolesports.com/en_US/">Esports</a>
+      <a href="https://merch.riotgames.com/en_US/">Shop</a>
+    </div>
+    <a href="https://signup.lan.leagueoflegends.com/es/signup/index#/" id="btn-game-desktop">Play now</a>
+  </header>
+
+  <!--Barra de navegación inferior - Versión mobile-->
+  <nav class="mobile">
+    <img src="img/sort.svg" alt="Sort" id="sort">
+    <img src="img/cards.svg" alt="List" id="cards">
+    <img src="img/filter.svg" alt="Filter" id="filter">
+  </nav>
+
+  <!--Contenido principal de la página-->
+  <main>
+    <!--Bienvenida de la página-->
+    <h1><span class="first-line">Choose your</span><span class="second-line">champion</span></h1>
+    <p class="welcome">With more than 140 champions, you’ll find the perfect match for your playstyle.
+      Master one, or master them all.</p>
+
+    <!--Barra de navegación - Search es visible en mobile, lso demás solo desktop-->
+    <section class="navigation-bar">
+      <article class="nav-search">
+        <img src="img/search.svg" alt="Search" id="search-icon">
+        <h4>Search</h4>
+        <input type="text" class="search" id="search" placeholder="Champion's name">
+      </article>
+      <article class="nav-role">
+        <h4>Roles</h4>
+        <select class="list-role">
+          <option class="option-role" value='All' >Select a role</option>
+          <option class="option-role" value='Assassin' id="Assassin">Assassin</option>
+          <option class="option-role" value='Fighter' id="Fighter">Fighter</option>
+          <option class="option-role" value='Mage' id="Mage">Mage</option>
+          <option class="option-role" value='Melee' id="Melee">Melee</option>
+          <option class="option-role" value='Support' id="Support">Support</option>
+          <option class="option-role" value='Tank' id="Tank">Tank</option>
+        </select>
+      </article>
+      <article class="nav-sort">
+        <select class="List" id='sort-list'>
+          <option id="normal" value="az">A-Z</option> //upward
+          <option id="reverse" value="za">Z-A</option> //falling
+        </select>
+      </article>
+      <article class="nav-difficult">
+        <h4>Difficult</h4>
+      </article>
+    </section>
+
+    <!--En esta sección se crea DOM que permita visualizar la data-->
+    <section class="champions" id="root"></section>
+
+    <!--En esta sección se invita al usuario a descargar la aplicación-->
+    <section class="download">
+      <h2>Take<span id="league">league</span> with you</h2>
+      <p class="invitation">Download the League app to stay connected to friends and the latest game and esports news.
+      </p>
+    <!--Contenedor de img-->
+      <div class="store-links">
+        <img src="img/google.png" alt="Google Play">
+        <img src="img/app.png" alt="App Store">
+      </div>
+    </section>
+
+    <!--Sección de popups: filtros y menú hamburguesa-->
+    <section class="popup-section">
+
+      <!--Menú hamburguesa-->
+      <div class="hamb-menu-overlay" id="hamb-menu-overlay">
+        <div class="popup-hamb-menu" id="hamb-menu-popup">
+          <div class="hamb-menu-div">
+            <a href="#" class="btn-close-popup" id="btn-close-hamb-menu"><i class="fas fa-times"></i></a>
+            <div class="external-links">
+              <a href="https://na.leagueoflegends.com/en-us/how-to-play/">How to play</a>
+              <a href="https://na.leagueoflegends.com/en-us/news/">News</a>
+              <a href="https://lolesports.com/en_US/">Esports</a>
+              <a href="https://merch.riotgames.com/en_US/">Shop</a>
+              <a href="https://signup.lan.leagueoflegends.com/es/signup/index#/" class="btn-game">Play now</a>
+            </div>
+          </div>
         </div>
-      </section>
-    </main>
-    <script src="main.js" type="module"></script>
-  </body>
+      </div>
+
+      <!--Menú filtros - Botón derecho-->
+      <div class="overlay-filter">
+        <div class="popup-filter">
+          <a href="" class="btn-close-popup" id="btn-close-popup"><i class="fas fa-times"></i></a>
+          <h5>Filter by</h5>
+          <div class="box-btn-select">
+            <div class="btn-select">
+              <img src="img/role.svg" alt="Role icon" id="" class="role-img">
+              <p>Role</p>
+            </div>
+            <div class="btn-select">
+              <img src="img/difficult.svg" alt="Difficult level" id="" class="diff-img">
+              <p>Difficult</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Menú filtro rol-->
+      <div class="overlay-role">
+        <div class="popup-role">
+          <a href="" class="btn-close-popup" id="btn-close-popup"><i class="fas fa-times"></i></a>
+          <h5>Role</h5>
+          <div class="box-btn-rol">
+            <div class="btn-select-role">
+              <img src="img/controller.png" alt="Controller role" id="" class="role-img">
+              <p>Controller</p>
+            </div>
+            <div class="btn-select-role">
+              <img src="img/fighter.png" alt="Fighter role" id="" class="role-img">
+              <p>Fighter</p>
+            </div>
+            <div class="btn-select-role">
+              <img src="img/mage.png" alt="Mage role" id="" class="role-img">
+              <p>Mage</p>
+            </div>
+            <div class="btn-select-role">
+              <img src="img/marksman.png" alt="Marksman role" id="" class="role-img">
+              <p>Marksman</p>
+            </div>
+            <div class="btn-select-role">
+              <img src="img/slayer.png" alt="Slayer role" id="" class="role-img">
+              <p>Slayer</p>
+            </div>
+            <div class="btn-select-role">
+              <img src="img/specialist.png" alt="Specialist role" id="" class="role-img">
+              <p>Specialist</p>
+            </div>
+            <div class="btn-select-role">
+              <img src="img/tank.png" alt="Tank role" id="" class="role-img">
+              <p>Tank</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Menú filtro oden A-Z ó Z-A-->
+      <div class="overlay-sort">
+        <div class="popup-role">
+          <a href="" class="btn-close-popup" id="btn-close-popup"><i class="fas fa-times"></i></a>
+          <h5>Sort</h5>
+          <div class="box-btn-sort">
+            <div class="btn-select-sort">
+              <img src="img/a-z.svg" alt="Sort a-z" id="" class="sort-img">
+            </div>
+            <div class="btn-select-sort">
+              <img src="img/z-a.svg" alt="Sort z-a" id="" class="sort-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
-
-
