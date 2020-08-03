@@ -12,7 +12,7 @@ for (const champion of datos) {
     `
   }
 
-document.getElementById("bot").addEventListener("click",NewElement);
+//document.getElementById("bot").addEventListener("click",NewElement);
   
 
 

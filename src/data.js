@@ -15,7 +15,6 @@ for (const champion of datos) {
 
   // Función de filtro//
 
-
   const filterData = (data,condition)=>{
     const role_one = data.map((dato) => [dato.name,dato.tags[0],dato.splash]); 
     const role_two = data.map((dato) => [dato.name,dato.tags[1],dato.splash]);   
@@ -24,16 +23,17 @@ for (const champion of datos) {
     const final = classify.concat(classify_two);
     return final;
   };
-  //console.log(filterData(datos,'Assassin'));//
+  //console.log(filterData(datos,'Assassin'));
 
   //Función Dificultad//
 
   const filterDif = (data, num) =>{
     const difficulty = data.map((dato) => [dato.name,dato.info.difficulty,dato.splash]);
-    const diff = difficulty.filter(dif => dif[1] == num);
+    const diff = difficulty.filter(dif => dif[1] >= num);
     return diff;
   }; 
- // console.log(filterDif(datos,1))//
+ console.log(filterDif(datos,5)) 
+
 
   // Función Sort//
 
@@ -41,5 +41,5 @@ for (const champion of datos) {
     let dataorga = data.map((dato)=> [dato.name,dato.splash]);
     return dataorga.sort();
   };
-  console.log(organize(datos))
+  //console.log(organize(datos))
   
