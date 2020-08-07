@@ -3,15 +3,26 @@
     .mobile{
       display: none;
     }
-  
+
     .popup-section{
       display: none;
     }
-  
+
     #hamb-menu{
       display: none;
     }
-  
+
+    header{
+      height: 125px;
+      padding: 2rem;
+      justify-content: space-between;
+    }
+
+    header #logo{
+      height: 75px;
+      margin-left: 60px;
+    }
+
     #box-header{
       display: unset;
       width: 40%;
@@ -19,15 +30,17 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      margin-top: 20px;
+      max-width: 480px;
     }
-  
+
     #box-header a{
       text-decoration: none;
       color: #E5E5E5;
       text-transform: uppercase;
       font-family: "Friz Quadrata Regular";
     }
-  
+
     header #btn-game-desktop{
       display: unset;
       text-decoration: none;
@@ -38,59 +51,76 @@
       border-radius: 4px;
       padding: 14px;
       height: 46px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin-top: 8px;
+      margin-right: 60px;
     }
-  
-    .navigation-bar .nav{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-    }
-  
-    .navigation-bar .nav #search-icon{
-      border: none;
-      padding-right: 30px;
-      margin-top: 4px;
-      margin-bottom: 4px;
-      padding-top: 5px;
-    }
-  
-    .navigation-bar .nav #search{
-      border-style: none;
-      margin-left: 10px;
-      padding-left: 38px;
-    }
-  
-    .navigation-bar .nav h4{
-      display: unset;
-      padding: 11px;
-      text-transform: uppercase;
-      color: #444445;
-  
-    }
-  
-    .navigation-bar .nav{
+
+
+    .navigation-bar{
       height: 50px;
       width: 80%;
       border: 0.5px solid #C4C4C4;
       border-radius: 8px;
       display: flex;
-      margin: auto;
-      margin-bottom: 45px;
+      flex-direction: row;
+      justify-content: space-around;
     }
-  
+
+    .navigation-bar .nav-search{
+      height: 50px;
+      border: none;
+      border-radius: 8px;
+      margin: 0px;
+    }
+
+    .navigation-bar .nav #search-icon{
+      border: none;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      padding-left: 5px;
+    }
+
+    .navigation-bar .nav h4{
+      display: unset;
+      padding: 11px;
+      text-transform: uppercase;
+      color: #444445;
+    }
+
+    .navigation-bar .nav #search{
+      border-style: none;
+      margin-left: 10px;
+      padding-left: 38px;
+    }
+
     .navigation-bar .nav-role{
       display: unset;
+      display: flex;
+      flex-direction: row;
+      width: 30%;
+      flex-wrap: wrap;
     }
-  
+
+    .navigation-bar .nav-role h4{
+      margin: auto;
+    }
+
+
+
+    .navigation-bar .nav-role .list-role{
+      border: none;
+      background-color: white;
+    }
+
     .navigation-bar .nav-sort{
       display: unset;
     }
-  
+
     .navigation-bar .nav-difficult{
       display: unset;
     }
-  
-  
+
     #root {
       width: 90%;
       display: flex;
@@ -98,16 +128,49 @@
       padding: 1rem;
       justify-content: space-around;
       margin: auto;
+      z-index: 2;
     }
-  
+
     #root div{
       height: 108px;
       width: 375px;
     }
-  
+
     :root .imgchampion{
       width: 375px;
     }
-  
+
+    /*--------------------*/
+    /*MODALES DE CHAMPIONS*/
+    /*--------------------*/
+
+    main #modal{
+      position: fixed;
+      top: 75px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      background-color:rgba(0, 0, 0, 0.25);
+    }
+
+    main #modal .modal-overlay{
+      display: unset;
+      width: 100%;
+    }
+
+
+    main #modal .modal-overlay .background{
+      width: 100%;
+      z-index: 1;
+      filter: blur(0.5rem);
+    }
+
+    main #modal .modal-overlay .modal-popup{
+      position: absolute;
+      z-index: 5;
+
+    }
+
+
   }
-  

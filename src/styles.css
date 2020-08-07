@@ -70,6 +70,10 @@ header #hamb-menu{
   visibility: hidden;                             /*      */
 }
 
+.hamb-menu-overlay.active{
+  visibility: visible;
+}
+
 .hamb-menu-overlay .popup-hamb-menu{
   position: absolute;
   background: #C6AD64;
@@ -83,6 +87,11 @@ header #hamb-menu{
   display: flex;
   flex-direction: column;
   z-index: 3;
+  visibility: hidden;
+}
+
+.hamb-menu-overlay .popup-hamb-menu.active{
+  visibility: visible;
 }
 
 #btn-close-hamb-menu{
@@ -388,7 +397,7 @@ section .store-links img{
 .popup-section .popup-role{
   background: #444445;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
-  height: 218px;
+  height: 400x;
   width: 292px;
   border-radius: 4px;
   padding: 1rem;
@@ -413,3 +422,105 @@ section .store-links img{
   padding-left: 10px;
   margin-bottom: 8px;
 }
+
+.popup-section .popup-role .btn-select-role{
+  display: inline-block;
+  height: 100px;
+  width: 90px;
+  background-color: #656156;
+  flex-wrap: wrap;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+}
+
+.popup-section .popup-role .btn-select-role img{
+  height: 42px;
+}
+
+.popup-section .overlay-sort{
+  background: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;                             /*      */
+}
+
+.popup-section .overlay-sort.active{
+  visibility: visible;
+}
+
+.popup-section .popup-sort{
+  background: #444445;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+  height: 218px;
+  width: 292px;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.popup-section .popup-sort .btn-close-popup{
+  font-size: 1rem;
+  line-height: 1rem;
+  display: block;
+  text-align: right;
+  color: #bbbbbb;
+  transition: .3s ease all;
+}
+
+.popup-section .popup-sort h5{
+  color: #C6AD64;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: "Friz Quadrata Regular";
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 8px;
+
+}
+
+.popup-section .popup-sort .box-btn-select{
+  display: flex;
+  flex-direction: row;
+  width: 247px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.popup-section .popup-sort .btn-select{
+  background: #656156;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  height: 115px;
+  width: 115px;
+  padding: 1rem;
+}
+
+.hide{
+  display: none;
+}
+
+
+main #modal{
+  position: fixed;
+  top: 100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color:rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+}
+
+main #modal .modal-overlay{
+  height: 100%;
+  z-index: 8;
+}
+

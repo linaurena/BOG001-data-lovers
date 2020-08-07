@@ -50,7 +50,7 @@
     <p class="welcome">With more than 140 champions, you’ll find the perfect match for your playstyle.
       Master one, or master them all.</p>
 
-    <!--Barra de navegación - Search es visible en mobile, lso demás solo desktop-->
+    <!--Barra de navegación - Search es visible en mobile, lo demás solo desktop-->
     <section class="navigation-bar">
       <article class="nav-search">
         <img src="img/search.svg" alt="Search" id="search-icon">
@@ -60,13 +60,12 @@
       <article class="nav-role">
         <h4>Roles</h4>
         <select class="list-role">
-          <option class="option-role" value='All' >Select a role</option>
-          <option class="option-role" value='Assassin' id="Assassin">Assassin</option>
-          <option class="option-role" value='Fighter' id="Fighter">Fighter</option>
-          <option class="option-role" value='Mage' id="Mage">Mage</option>
-          <option class="option-role" value='Melee' id="Melee">Melee</option>
-          <option class="option-role" value='Support' id="Support">Support</option>
-          <option class="option-role" value='Tank' id="Tank">Tank</option>
+          <option class="btn-select-role-drop" value='All' >Select a role</option>
+          <option class="btn-select-role-drop" value='Assassin' id="Assassin">Assassin</option>
+          <option class="btn-select-role-drop" value='Fighter' id="Fighter">Fighter</option>
+          <option class="btn-select-role-drop" value='Mage' id="Mage">Mage</option>
+          <option class="btn-select-role-drop" value='Support' id="Support">Support</option>
+          <option class="btn-select-role-drop" value='Tank' id="Tank">Tank</option>
         </select>
       </article>
       <article class="nav-sort">
@@ -77,12 +76,18 @@
       </article>
       <article class="nav-difficult">
         <h4>Difficult</h4>
+        <select class="list" id="difficult-list">
+          <option value="All">Select a difficult</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
       </article>
     </section>
 
     <!--En esta sección se crea DOM que permita visualizar la data-->
     <section class="champions" id="root"></section>
-
+    <section class="champions-card" id="modal"></section>
     <!--En esta sección se invita al usuario a descargar la aplicación-->
     <section class="download">
       <h2>Take<span id="league">league</span> with you</h2>
@@ -115,12 +120,12 @@
       </div>
 
       <!--Menú filtros - Botón derecho-->
-      <div class="overlay-filter">
-        <div class="popup-filter">
-          <a href="" class="btn-close-popup" id="btn-close-popup"><i class="fas fa-times"></i></a>
+      <div class="overlay-filter" id="filter-overlay">
+        <div class="popup-filter" id="filter-popup">
+          <button class="btn-close-popup" id="btn-close-filter-popup">X</button>
           <h5>Filter by</h5>
           <div class="box-btn-select">
-            <div class="btn-select">
+            <div class="btn-select" id="select-role-btn">
               <img src="img/role.svg" alt="Role icon" id="" class="role-img">
               <p>Role</p>
             </div>
@@ -133,14 +138,14 @@
       </div>
 
       <!--Menú filtro rol-->
-      <div class="overlay-role">
-        <div class="popup-role">
-          <a href="" class="btn-close-popup" id="btn-close-popup"><i class="fas fa-times"></i></a>
+      <div class="overlay-role" id="filter-role-overlay">
+        <div class="popup-role" id="filter-role-popup">
+          <button class="btn-close-popup" id="btn-close-filter-role-popup">X</button>
           <h5>Role</h5>
           <div class="box-btn-rol">
             <div class="btn-select-role">
-              <img src="img/controller.png" alt="Controller role" id="" class="role-img">
-              <p>Controller</p>
+              <img src="img/slayer.png" alt="Slayer role" id="" class="role-img">
+              <p>Assassin</p>
             </div>
             <div class="btn-select-role">
               <img src="img/fighter.png" alt="Fighter role" id="" class="role-img">
@@ -155,12 +160,8 @@
               <p>Marksman</p>
             </div>
             <div class="btn-select-role">
-              <img src="img/slayer.png" alt="Slayer role" id="" class="role-img">
-              <p>Slayer</p>
-            </div>
-            <div class="btn-select-role">
-              <img src="img/specialist.png" alt="Specialist role" id="" class="role-img">
-              <p>Specialist</p>
+              <img src="img/controller.png" alt="Controller role" id="" class="role-img">
+              <p>Support</p>
             </div>
             <div class="btn-select-role">
               <img src="img/tank.png" alt="Tank role" id="" class="role-img">
@@ -171,16 +172,16 @@
       </div>
 
       <!--Menú filtro oden A-Z ó Z-A-->
-      <div class="overlay-sort">
-        <div class="popup-role">
-          <a href="" class="btn-close-popup" id="btn-close-popup"><i class="fas fa-times"></i></a>
+      <div class="overlay-sort" id="sort-overlay">
+        <div class="popup-sort" id="sort-popup">
+          <a href="" class="btn-close-popup" id="btn-close-sort-popup"><i class="fas fa-times"></i></a>
           <h5>Sort</h5>
-          <div class="box-btn-sort">
-            <div class="btn-select-sort">
-              <img src="img/a-z.svg" alt="Sort a-z" id="" class="sort-img">
+          <div class="box-btn-select">
+            <div class="btn-select" id="select-az-btn">
+              <img src="img/a-z.svg" alt="Sort a-z" class="sort-img">
             </div>
-            <div class="btn-select-sort">
-              <img src="img/z-a.svg" alt="Sort z-a" id="" class="sort-img">
+            <div class="btn-select" id="select-za-btn">
+              <img src="img/z-a.svg" alt="Sort z-a" class="sort-img">
             </div>
           </div>
         </div>
