@@ -8,29 +8,12 @@ export const allData = () => {
   // Función de filtro//
 
   export const filterData = (info, condition)=>{
-
-    /*const role_one = info.map(function(x){
-      let arrChampion = new Array();
-      arrChampion['name'] = x.name;
-      arrChampion['tags'] = x.tags[0];
-      arrChampion['splash'] = x.splash;
-     // console.log(arrChampion)
-      return arrChampion});*/
-    /*const role_two = info.map(function(x){
-      let arrChampion = new Array();
-      arrChampion['name'] = x.name;
-      arrChampion['tags'] = x.tags[1];
-      arrChampion['splash'] = x.splash;
-      return arrChampion};*/
-    const classify = info.filter(role => role['tags'].includes(condition));
-    //const classify_two = role_two.filter(role => role['tags'] == condition);
-    //const final = classify.concat(classify_two);
+    const funcionifhvbf = Object.values(info);
+    const classify = funcionifhvbf.filter(role => {const rol = role['tags'];
+    const roles = rol.includes(condition)
+    return roles;});
     return classify;
   };
-
-
-
-
 
   //Función Dificultad//
 /*
@@ -85,12 +68,12 @@ export const allData = () => {
 
 //Función Search
 
-export const search = (array, initial) => {
-  const championComp = initial.toLowerCase();
-  const filter = array.filter((element) => {
-    const nameSearching = element.name.toLowerCase();
-    if (nameSearching.indexOf(championComp) !== -1) { return element; }
-    return false;
-  });
-  return filter;
-};
+export const nameChamp = (data,name) =>{
+  let lower = name.toLowerCase();
+  let Upper = lower.charAt(0).toUpperCase() + lower.slice(1)
+  let Mix = data.filter (function(champion) {
+    return champion.name.startsWith(Upper)
+  })
+  return Mix
+ };
+

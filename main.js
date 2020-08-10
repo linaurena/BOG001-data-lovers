@@ -1,6 +1,6 @@
 import data from "./data/lol/lol.js";
 //Para importar múltiples miembros de un módulo se utiliza , dentro de {}
-import {filterData, allData, organize} from "./data.js"
+import {filterData, allData, organize, nameChamp} from "./data.js"
 const datos = Object.values(data.data);
 //console.log(datos)
 const root = document.getElementById("root"); //Default
@@ -199,18 +199,15 @@ const champioName = ()=>
 
 */
 
-// Función search
+// Fitro Nombre - Desktop
+const searchchampDesktop = document.getElementById('search');
+searchchampDesktop.addEventListener('keyup', searchDesktop );
+function searchDesktop (event){
+    let orderOption = searchchampDesktop.value;
+    let searchChange = nameChamp (datos, orderOption);
+    getData(searchChange)
+}
 
-const inputToSearchChamp = document.getElementById('search');
-inputToSearchChamp.addEventListener('keyup', () => {
-  const characters = inputToSearchChamp.value;
-  const championToSearch = search(getData, characters);
-  if (championToSearch.length < 1){
-    root.innerHTML = `<p class='not-found'>Your search does not match the champions</p>`;
-  } else {
-    root.innerHTML = getData (championToSearch);
-  }
-});
 
 
 
