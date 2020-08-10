@@ -1,0 +1,237 @@
+@media screen and (min-width:1024px){
+
+    .mobile{
+      display: none;
+    }
+
+    .popup-section{
+      display: none;
+    }
+
+    #hamb-menu{
+      display: none;
+    }
+
+    header{
+      height: 125px;
+      padding: 2rem;
+      justify-content: space-between;
+    }
+
+    header #logo{
+      height: 75px;
+      margin-left: 60px;
+    }
+
+    #box-header{
+      display: unset;
+      width: 40%;
+      height: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 20px;
+      max-width: 480px;
+    }
+
+    #box-header a{
+      text-decoration: none;
+      color: #E5E5E5;
+      text-transform: uppercase;
+      font-family: "Friz Quadrata Regular";
+    }
+
+    header #btn-game-desktop{
+      display: unset;
+      text-decoration: none;
+      color: #444445;
+      text-transform: uppercase;
+      font-family: "Friz Quadrata Regular";
+      background-color: #C6AD64;
+      border-radius: 4px;
+      padding: 14px;
+      height: 46px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin-top: 8px;
+      margin-right: 60px;
+    }
+
+
+    .navigation-bar{
+      height: 50px;
+      width: 80%;
+      border: 0.5px solid #C4C4C4;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .navigation-bar .nav-search{
+      height: 50px;
+      border: none;
+      border-radius: 8px;
+      margin: 0px;
+    }
+
+    .navigation-bar .nav #search-icon{
+      border: none;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      padding-left: 5px;
+    }
+
+    .navigation-bar .nav h4{
+      display: unset;
+      padding: 11px;
+      text-transform: uppercase;
+      color: #444445;
+    }
+
+    .navigation-bar .nav #search{
+      border-style: none;
+      margin-left: 10px;
+      padding-left: 38px;
+    }
+
+    .navigation-bar .nav-role{
+      display: unset;
+      display: flex;
+      flex-direction: row;
+      width: 30%;
+      flex-wrap: wrap;
+    }
+
+    .navigation-bar .nav-role h4{
+      margin: auto;
+    }
+
+
+
+    .navigation-bar .nav-role .list-role{
+      border: none;
+      background-color: white;
+    }
+
+    .navigation-bar .nav-sort{
+      display: unset;
+    }
+
+    .navigation-bar .nav-difficult{
+      display: unset;
+    }
+
+    #root {
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1rem;
+      justify-content: space-around;
+      margin: auto;
+      z-index: 2;
+    }
+
+    #root div{
+      height: 108px;
+      width: 375px;
+    }
+
+    :root .imgchampion{
+      width: 375px;
+    }
+
+    /*--------------------*/
+    /*MODALES DE CHAMPIONS*/
+    /*--------------------*/
+
+    main #modal{
+      position: fixed;
+      top: 125px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      background-color:rgba(0, 0, 0, 0.25);
+      visibility: hidden;
+    }
+
+    main #modal.active{
+      visibility: visible;
+    }
+
+    main #modal .modal-overlay{
+      width: 100%;
+    }
+
+
+    main #modal .modal-overlay .background{
+
+    }
+
+    main #modal .modal-overlay .modal-popup{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      background-color: black;
+      align-content: center;
+    }
+
+    main #modal .modal-overlay .modal-head{
+      height: 70%;
+    }
+
+    main #modal .modal-overlay .modal-head img{
+      display: block;
+      margin: auto;
+      height: 80%;
+    }
+
+    main #modal .modal-overlay .modal-popup .modal-main{
+      width: 100%;
+      background-color: black;
+      display: block;
+      margin: auto;
+      margin-top: 5px;
+    }
+
+    main #modal .modal-overlay .modal-popup button{
+      position: absolute;
+      top: 5%;
+      left: 2%;
+      background-color: black;
+      width: 50px;
+      border: none;
+    }
+
+    main #modal .modal-overlay .modal-popup .modal-main .modal-title{
+      position: absolute;
+      top: 48%;
+      left: 41%;
+      font-family: "Friz Quadrata Regular";
+      font-size: 1.75rem;
+      color: aliceblue;
+      text-transform: uppercase;
+
+    }
+
+    main #modal .modal-overlay .modal-popup .modal-main .modal-name{
+      position: absolute;
+      top: 50%;
+      left: 38%;
+      font-size: 6rem;
+      font-family: "Friz Quadrata Regular";
+      text-transform: uppercase;
+      color: aliceblue;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    }
+
+    main #modal .modal-overlay .modal-popup .modal-main .modal-blurb{
+      width: 90%;
+      color: aliceblue;
+      font-size: 1.25rem;
+      display: block;
+      margin: auto;
+    }
