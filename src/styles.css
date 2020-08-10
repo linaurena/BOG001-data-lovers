@@ -242,7 +242,7 @@ main .welcome{
   width: 100%;
 }
 
-:root h3{
+:root .name-root{
   position: absolute;
   font-family: "Friz Quadrata Regular";
   font-size: 1.125rem; /*18px rem es el tamaño que necesitas / tamaño global de la fuente*/
@@ -515,12 +515,12 @@ main #modal{
   left: 0;
   right: 0;
   display: flex;
-  background-color:rgba(0, 0, 0, 0.25);
-  visibility: hidden;
 }
 
 main #modal .modal-overlay{
-  height: 100%;
-  z-index: 8;
+  visibility: hidd
 }
 
+main #modal .modal-overlay.active{
+  visibility: visible;
+}

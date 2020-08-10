@@ -1,6 +1,6 @@
 import data from "./data/lol/lol.js";
 //Para importar múltiples miembros de un módulo se utiliza , dentro de {}
-import {filterData, allData, organize, difficult} from "./data.js"
+import {filterData, allData, organize, nameChamp} from "./data.js"
 const datos = Object.values(data.data);
 //console.log(datos)
 const root = document.getElementById("root"); //Default
@@ -14,7 +14,7 @@ const getData = (data) => {
     .map(
       (champion) => `
         <div id= "${champion.name}" class="cardChampion" data-name="${champion.name}" data-title="${champion.title}" data-splash="${champion.splash}">
-          <h3>${champion.name}</h3>
+          <h3 class="name-root">${champion.name}</h3>
           <img class = 'imgchampion' src = '${champion.splash}' />
         </div>
       `
@@ -76,24 +76,38 @@ function showingModal (event){
    const modal = document.getElementById("modal");
   modal.innerHTML = `
   <div class="modal-overlay">
-    <img class="background" src='${infoChamp.splash}'>
     <div class="modal-popup">
+    <button class="btn-close-card"><img src="img/row.svg"></button>
       <div class="modal-head">
-        <h3 class="modal-name">${infoChamp.name}</h3>
+        <img class="modal-splash" src='${infoChamp.splash}'>
       </div>
       <div class="modal-main">
         <h5 class="modal-title">${infoChamp.title}</h5>
-        <img class="modal-splash" src='${infoChamp.splash}'>
+        <h3 class="modal-name">${infoChamp.name}</h3>
         <p class="modal-blurb">${infoChamp.blurb}</p>
-      </div>
-      <div class="modal-info">
-
       </div>
     </div>
   </div>
   `
+  modal.classList.add('active');
+  const overlayCard = document.querySelector('.modal-overlay'),
+  popupCard = document.querySelector('.modal-popup'),
+  btnCloseCard = document.querySelector('.btn-close-card');
+  overlayCard.classList.add("active");
+  popupCard.classList.add("active");
+
+  btnCloseCard.addEventListener("click", function(){
+    modal.classList.remove('active');
+    overlayCard.classList.remove("active");
+    popupCard.classList.remove("active");
+    console.log(btnCloseCard)
+  });
+
+
   console.log(modal)
 }
+/*<img class="background" src='${infoChamp.splash}'>*/
+
 /*
 function printModal(){
   const viewCard = `
@@ -136,7 +150,7 @@ function sortingDesktop (event){
 
 
 // Filtro difficult - Desktop
-
+/*
 const filterDifficultDesktop = document.getElementById('difficult-list');
 filterDifficultDesktop.addEventListener('change', difficultLevelDesk)
 
@@ -152,7 +166,7 @@ function difficultLevelDesk () {
   return difficulty;
 }
 
-
+*/
 
 /*
    switch(difficulty) {
@@ -184,6 +198,16 @@ const champioName = ()=>
    searchName.addEventListener("keyup", champioName)
 
 */
+
+// Fitro Nombre - Desktop
+const searchchampDesktop = document.getElementById('search');
+searchchampDesktop.addEventListener('keyup', searchDesktop );
+function searchDesktop (event){
+    let orderOption = searchchampDesktop.value;
+    let searchChange = nameChamp (datos, orderOption);
+    getData(searchChange)
+}
+
 
 
 
@@ -250,3 +274,21 @@ btnCloseSort.addEventListener("click", function(){
   overlaySort.classList.remove("active");
   popupSort.classList.remove("active");
 });
+
+// -------- Modal Champions
+/*
+const btnCard = document.querySelector('.cardChampion'),
+overlayCard = document.querySelector('.modal-overlay'),
+popupCard = document.querySelector('.modal-popup'),
+btnCloseCard = document.querySelector('.btn-close-card');
+
+btnCard.addEventListener("click", function(){
+  overlayCard.classList.add("active");
+  popupCard.classList.add("active");
+});
+
+btnCloseCard.addEventListener("click", function(){
+  overlayCard.classList.remove("active");
+  popupCard.classList.remove("active");
+});
+*/

@@ -8,29 +8,12 @@ export const allData = () => {
   // Función de filtro//
 
   export const filterData = (info, condition)=>{
-
-    /*const role_one = info.map(function(x){
-      let arrChampion = new Array();
-      arrChampion['name'] = x.name;
-      arrChampion['tags'] = x.tags[0];
-      arrChampion['splash'] = x.splash;
-     // console.log(arrChampion)
-      return arrChampion});*/
-    /*const role_two = info.map(function(x){
-      let arrChampion = new Array();
-      arrChampion['name'] = x.name;
-      arrChampion['tags'] = x.tags[1];
-      arrChampion['splash'] = x.splash;
-      return arrChampion};*/
-    const classify = info.filter(role => role['tags'].includes(condition));
-    //const classify_two = role_two.filter(role => role['tags'] == condition);
-    //const final = classify.concat(classify_two);
+    const funcionifhvbf = Object.values(info);
+    const classify = funcionifhvbf.filter(role => {const rol = role['tags'];
+    const roles = rol.includes(condition)
+    return roles;});
     return classify;
   };
-
-
-
-
 
   //Función Dificultad//
 /*
@@ -58,7 +41,7 @@ export const allData = () => {
   };
   //console.log(organize(datos))
 
-
+/*
 //let array1 = [];
   // Función Difficult
 
@@ -67,10 +50,10 @@ export const allData = () => {
     switch (selectedLevel){
         case 'Low':
           if (num <= 4){
-            console.log ('aqui vienen los menores de 4'); /* array1.push('array de los menores de 4'); */
+            console.log ('aqui vienen los menores de 4'); /* array1.push('array de los menores de 4');
           }
         break;
-     /*
+
         case 'Medium':
           if  (num <= 8)
           console.log('Funciona 2');
@@ -78,9 +61,19 @@ export const allData = () => {
         case 'High':
           if (num <= 10)
           console.log('Funciona 3');
-        break;*/
+        break;
       }
     }
-
+*/
 
 //Función Search
+
+export const nameChamp = (data,name) =>{
+  let lower = name.toLowerCase();
+  let Upper = lower.charAt(0).toUpperCase() + lower.slice(1)
+  let Mix = data.filter (function(champion) {
+    return champion.name.startsWith(Upper)
+  })
+  return Mix
+ };
+
