@@ -167,7 +167,7 @@ We used [Figma](https://www.figma.com/) to perform this requirement, this is [ou
 ### JavaScript
 
 * [ ] Uso de condicionales (if-else | switch | operador ternario)
-* [ x ] Uso de bucles (for | for..in | for..of | while)
+* [ X ] Uso de bucles (for | for..in | for..of | while)
 * [ ] Uso de funciones (parámetros | argumentos | valor de retorno)
 * [ x ] Manipular arrays (filter | map | sort | reduce)
 * [ x ] Manipular objects (key | value)
