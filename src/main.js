@@ -208,8 +208,16 @@ function searchDesktop (event){
     getData(searchChange)
 }
 
+/*
+const filterSortMobile = document.getElementById('sort-overlay');
 
-
+filterSortMobile.addEventListener('click', sortingMobile);
+function sortingMobile (event){
+    let orderOptionMobile = event.target.value;
+    let organizeChangeMob = organize (datos, orderOptionMobile);
+    getData(organizeChangeMob)
+}
+*/
 
 // -------- Menú hamburguesa - Mobile
 const btnHambMenu = document.getElementById('hamb-menu'),
