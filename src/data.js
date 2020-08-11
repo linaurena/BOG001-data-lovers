@@ -8,8 +8,8 @@ export const allData = () => {
   // Función de filtro//
 
   export const filterData = (info, condition)=>{
-    const funcionifhvbf = Object.values(info);
-    const classify = funcionifhvbf.filter(role => {const rol = role['tags'];
+    const dataInfo = Object.values(info);
+    const classify = dataInfo.filter(role => {const rol = role['tags'];
     const roles = rol.includes(condition)
     return roles;});
     return classify;
